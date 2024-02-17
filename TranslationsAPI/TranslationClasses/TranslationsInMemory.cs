@@ -12,6 +12,7 @@ namespace TranslationsAPI.StaticClasses
             //This block of code will only run only once on the 1st call for Translations
             TranslatedPhraseByLanguage phraseToTranslate = new() {  ProductCode = "in", LanguageCode = "gm", PhraseToTranslate = "Your insurance documents have been submitted", TranslatedPhrase = "Ihre Versicherungsunterlagen wurden eingereicht" };
             _translatedPhrases[0] = phraseToTranslate;
+             Array.Sort(_translatedPhrases);//since we have defined comparer on type TranslatedPhraseByLanguage we can sort our array according to the comparer
         }
 
         public TranslatedPhraseByLanguage[] TranslatedPhrases { get {  return _translatedPhrases; } }
